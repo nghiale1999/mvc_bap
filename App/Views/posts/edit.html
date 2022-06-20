@@ -1,0 +1,17 @@
+{% extends "posts/app.html" %} {% block title %}edit_posts{% endblock %} {% block body %} {% for vl in posts%}
+<form action="?posts/{{vl.id}}/edit" method="POST" enctype="multipart/form-data">
+    <div class="form-group mt-5">
+        <b><label for="exampleInputEmail1">title</label></b>
+        <input name="title" type="text" class="form-control" value="{{vl.title}}"></div>
+    <div class="form-group">
+        <b><label for="exampleInputPassword1">content</label></b><br>
+        <textarea name="content" rows="5" cols="100" value="">{{vl.content}}</textarea>
+    </div>
+    <div class="form-group">
+        <b><label for="exampleInputPassword1">picture</label></b><br>
+        <input type="file" name="file">
+        <img src="/image/{{vl.picture}}" alt="" width="60px" height="60px">
+    </div>
+    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+</form>
+{% endfor%} {% endblock %}

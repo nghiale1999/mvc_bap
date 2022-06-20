@@ -1,0 +1,32 @@
+{% extends "posts/app.html" %} {% block title %}list_posts{% endblock %} {% block body %}
+
+
+<table class="table mt-5 ">
+    <thead>
+        <tr>
+            <th width='80px'>Id</th>
+            <th>User Name</th>
+            <th>Image</th>
+            <th>Title</th>
+            <th width='1100px'>Content</th>
+            <th width='200px'>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for vl in posts%}
+        <tr>
+            <td>{{vl.id}}</td>
+            <td>{{vl.name_user}}</td>
+            <td><img src="/image/{{vl.picture}}" alt="" width="60px" height="60px"></td>
+            <td>{{vl.title}}</td>
+            <td>{{vl.content}}</td>
+            <td>
+                <a href="?posts/{{vl.id}}/edit"><button type="button" class="btn btn-primary">edit</button></a>
+                <a href="?posts/{{vl.id}}/delete"><button type="button" class="btn btn-danger">delete</button></a>
+            </td>
+        </tr>
+        {% endfor%}
+    </tbody>
+</table>
+
+{% endblock %}

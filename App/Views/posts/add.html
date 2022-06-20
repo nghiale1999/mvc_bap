@@ -1,0 +1,17 @@
+{% extends "posts/app.html" %} {% block title %}add_posts{% endblock %} {% block body %}
+<form action="?posts/add" method="POST" enctype="multipart/form-data">
+    <div class="form-group mt-5">
+        <b><label for="exampleInputEmail1">title</label></b>
+        <input name="title" type="text" class="form-control"></div>
+    <div class="form-group">
+        <b><label for="exampleInputPassword1">content</label></b><br>
+        <textarea name="content" rows="5" cols="100"></textarea>
+    </div>
+    <div class="form-group">
+        <b><label for="exampleInputPassword1">picture</label></b><br>
+        <input type="file" name="file">
+    </div>
+    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+</form>
+
+{% endblock %}
